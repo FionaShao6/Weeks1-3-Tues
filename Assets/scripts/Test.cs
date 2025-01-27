@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    public float speed = 0.01f;
+    public float speed = 0.05f;
     public AnimationCurve curve;
     [Range(0, 10)]
     public float t;
