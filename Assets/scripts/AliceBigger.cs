@@ -10,8 +10,8 @@ public class AliceBigger : MonoBehaviour
     public float t;
 
 
-    public Vector2 rectPosition = new Vector2(2.31f, -2.12f);//The position of the rect
-    public Vector2 rectSize = new Vector2(0.58f,0.83f);//the width and high of the rect, 
+    public Vector2 rectPosition = new Vector2(2.31f, -1.79f);//The position of the rect
+    public Vector2 rectSize = new Vector2(0.64f,1.68f);//the width and high of the rect, 
     //I created a rectangle with the same shape as the medicine under it to facilitate the size and position of the medicine.
 
     bool StartToChange = false;//Used to determine whether it is starting to grow
@@ -47,10 +47,10 @@ public class AliceBigger : MonoBehaviour
     private bool IsMouseInRectangle(Vector3 point)
     {
         //The return is used to pass the judgment result back to
-        return point.x >= rectPosition.x &&//
-               point.x <= rectPosition.x + rectSize.x &&
-               point.y >= rectPosition.y &&
-               point.y <= rectPosition.y + rectSize.y;
+        return point.x >= rectPosition.x - rectSize.x/2 &&//
+               point.x <= rectPosition.x + rectSize.x/2 &&
+               point.y >= rectPosition.y- rectSize.y/2 &&
+               point.y <= rectPosition.y + rectSize.y/2;
         //The four points of the rectangle
         //These are used to determine whether the mouse point is within the rectangle
 
