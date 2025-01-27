@@ -5,8 +5,8 @@ using UnityEngine;
 public class RabbitRun : MonoBehaviour
 {
     float speed = 0.01f;
-    public AnimationCurve curve;
-    [Range(0,10)]
+    public AnimationCurve curve;//Declaration of use AnimationCurve
+    [Range(0,10)]//Set a range
     public float t;
     // Start is called before the first frame update
     void Start()
@@ -18,15 +18,12 @@ public class RabbitRun : MonoBehaviour
     void Update()
     {
         t += Time.deltaTime;
-        if (t > 10)
-        {
-            t = 0;
-        }
+      
 
-        transform.localScale = Vector2.one * curve.Evaluate(t);
+        transform.localScale = Vector2.one * curve.Evaluate(t);//Use curve to make the rabbit bigger
+        //Create a forward-moving effect
 
-
-        Vector3 pos = transform.position;
+        Vector3 pos = transform.position;//Move towards the lower left corner, so both x and y decrease
         pos.x -= speed;
         pos.y -= speed;
         transform.position = pos;

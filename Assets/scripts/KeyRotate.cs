@@ -18,7 +18,7 @@ public class KeyRotate : MonoBehaviour
     void Update()
     {
         transform.Rotate(0, 0, speed * Time.deltaTime);
-        
+        //I grouped kty and the circle together and made it rotate around the circle.
 
     }
 }

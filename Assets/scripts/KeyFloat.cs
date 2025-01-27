@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class KeyFloat : MonoBehaviour
 {
@@ -18,12 +20,9 @@ public class KeyFloat : MonoBehaviour
     void Update()
     {
         Vector3 rot = transform.eulerAngles;
-        rot.z += speed*Time.deltaTime;
+        rot.z += speed*Time.deltaTime;// Rotate around the z - axis
         transform.eulerAngles = rot;
-        //transform.Rotate(0,0, speed * Time.deltaTime);
-        //transform.position = Vector3.zero;
+        //Self rotation
 
-        //transform.eulerAngles = Vector3.zero;
-       
     }
 }

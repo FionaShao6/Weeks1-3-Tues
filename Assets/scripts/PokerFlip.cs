@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class PokerRotate : MonoBehaviour
 {
+    ////I tried many times here, you can see that the commented out ones are all written by me, but it didn't work
     public float speed = 0.1f;
     [Range(0, 0.3f)]
     public float t;
@@ -26,6 +27,7 @@ public class PokerRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //I first let the keyboard control the position of the playing cards
         Vector2 pos = transform.position;
         pos.x += Input.GetAxis("Horizontal") * speed * 5f * Time.deltaTime;
         pos.y += Input.GetAxis("Vertical") * speed * 5f * Time.deltaTime;
@@ -55,10 +57,10 @@ public class PokerRotate : MonoBehaviour
 
         //}
 
-        t += direction * speed * Time.deltaTime;
+        t += direction * speed * Time.deltaTime;//t is the value that controls the width of the poker
 
 
-        if (t >= 0.3f)
+        if (t >= 0.3f)//If it is greater than 0.3f, then it will act in the opposite direction, causing a reversal effect.
         {
             t = 0.3f;
             direction = -1;
@@ -69,7 +71,7 @@ public class PokerRotate : MonoBehaviour
             direction = 1;
         }
         Vector2 scale = transform.localScale;
-        scale.x = Mathf.Lerp(0, 1, t);
+        scale.x = Mathf.Lerp(0, 1, t);//Here is the use of lerp to scale
         transform.localScale = scale;
 
     }
